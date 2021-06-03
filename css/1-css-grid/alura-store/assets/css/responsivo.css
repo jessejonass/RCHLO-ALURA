@@ -26,6 +26,17 @@
     grid-column: none;
     grid-row: none;
   }
+
+  .populares__conteudo  {
+    flex-direction: column;
+  }
+
+  .populares__card {
+    grid-template-rows: 150px auto;
+    width: 100%;
+    margin-bottom: 3rem;
+    margin-right: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -60,10 +71,29 @@
   .destaques__categorias {
     grid-column: 1 / 3;
   }
+  
+  .populares__conteudo  {
+    flex-direction: row;
+  }
+
+  .populares__card {
+    grid-template-rows: 173px auto;
+    width: calc(50% - 1rem);
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
+  .populares__card {
+    width: calc(33.33% - 1rem);
+    margin-bottom: 3rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  .populares__card {
+    width: calc(20% - 1rem);
+    margin-bottom: 0;
+  }
 }
