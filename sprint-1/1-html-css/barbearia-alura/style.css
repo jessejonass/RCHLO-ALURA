@@ -165,6 +165,23 @@ td, th {
 	clear: left;
 }
 
+/* .titulo-principal::first-letter {
+	font-weight: bold;
+	font-size: 2em;
+} */
+
+/* p::first-line {
+	font-style: italic;
+} */
+
+.titulo-principal::before {
+	content: "[ ";
+}
+
+.titulo-principal::after {
+	content: " ]";
+}
+
 .principal {
 	padding: 3em 0;
 	background: #fefefe;
@@ -226,6 +243,10 @@ td, th {
 	line-height: 1.5em;
 }
 
+.itens::before {
+	content: "★ ";
+}
+
 .itens:nth-child(1) {
 	font-weight: bold;
 }
@@ -237,4 +258,25 @@ td, th {
 .video {
 	width: 560px;
 	margin: 2em auto;
+}
+
+/* seletores avançados */
+/* somente os 'p' filhos direto da main */
+main > p {
+	background: red;
+}
+
+/* apenas o primeiro irmão de uma imagem */
+img + p {
+	background: blue;
+}
+
+/* todos irmãos de uma imagem */
+img ~ p {
+	background: greenyellow;
+}
+
+/* todos os p que não tenham o id missão */
+.principal p:not(#missao) {
+	background: orange;
 }
