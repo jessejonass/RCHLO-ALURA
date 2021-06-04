@@ -163,6 +163,7 @@ td, th {
 	margin: 0 0 1em;
 
 	clear: left;
+	/* text-shadow: 1px 1px #050505; */
 }
 
 /* .titulo-principal::first-letter {
@@ -226,6 +227,9 @@ td, th {
 .beneficios {
 	padding: 3em 0;
 	background: #888888;
+
+	/* sombra interna */
+	/* box-shadow: inset 0 0 30px #ff0000; */
 }
 
 .conteudo-beneficios {
@@ -253,6 +257,9 @@ td, th {
 
 .imagem-beneficios {
 	width: 60%;
+
+	/* X | Y | blur | intensidade da borda | cor - posso usar varias sombras */
+	box-shadow: 10px 10px 10px #000;
 }
 
 .video {
@@ -260,23 +267,23 @@ td, th {
 	margin: 2em auto;
 }
 
-/* seletores avançados */
+/* seletores avançados * * * * * * * * * * * * */
 /* somente os 'p' filhos direto da main */
-main > p {
+/* main > p {
 	background: red;
-}
+} */
 
 /* apenas o primeiro irmão de uma imagem */
-img + p {
+/* img + p {
 	background: blue;
-}
+} */
 
 /* todos irmãos de uma imagem */
-img ~ p {
+/* img ~ p {
 	background: greenyellow;
-}
+} */
 
 /* todos os p que não tenham o id missão */
-.principal p:not(#missao) {
+/* .principal p:not(#missao) {
 	background: orange;
-}
+} */
