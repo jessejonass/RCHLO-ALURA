@@ -3,3 +3,25 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+}
+
+/* footer */
+.rodapePrincipal-patrocinadores .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* input e button do form no footer */
+.rodapePrincipal-contatoForm-fieldset {
+  display: flex;
+}
