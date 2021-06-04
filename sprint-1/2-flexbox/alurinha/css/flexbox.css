@@ -25,3 +25,13 @@
 .rodapePrincipal-contatoForm-fieldset {
   display: flex;
 }
+
+/* lista de cursos */
+.rodapePrincipal-navMap-list {
+  display: flex;
+  flex-direction: column;
+
+  /* discordo kkk - corrigir - seguindo o curso pra nao quebrar */
+  height: 250px;
+  flex-wrap: wrap;
+}
