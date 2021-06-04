@@ -1,6 +1,6 @@
 ![up!tech-logo-2](https://user-images.githubusercontent.com/29109974/120714218-4dd86600-c499-11eb-9cba-397f9252b0bb.png)
 
-<h1 align="center">Sprints Up! Tech Riachuelo</h1>
+<h1 align="center">Sprints [Up!]Tech Riachuelo</h1>
 
 <h3 align="center">Repository of sprints (Front End) of the [Up!]Tech Riachuelo acceleration program using the Alura platform 👩🏻‍💻</h3>
 
