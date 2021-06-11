@@ -1,0 +1,38 @@
+$grey-100: #cccccc;
+$white-ice: #f5f5f5;
+$black: #000;
+
+@mixin mobile {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+/* converte font-size de px para rem */
+@function calculateRem($size) {
+  @return $size / 16px * 1rem;
+}
+@mixin fontSize($size) {
+  font-size: calculateRem($size);
+}
+
+@import 'header';
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
