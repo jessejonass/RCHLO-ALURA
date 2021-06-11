@@ -113,6 +113,16 @@
 .header-info__link:hover {
   background: #f5f5f5;
 }
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .header-info__link:nth-child(2) {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .header-info__link:nth-child(2) {
+    display: none;
+  }
+}
 .header-info__link-img {
   width: 16px;
 }
@@ -181,6 +191,39 @@
 .breadcrumb-list__link--current {
   font-weight: 700;
   color: #000;
+}
+
+.filter {
+  width: 100%;
+}
+.filter__container {
+  max-width: 1150px;
+  margin: 0 auto;
+  border-bottom: 1px solid #cccccc;
+}
+.filter__list {
+  display: flex;
+}
+
+.filter-list {
+  display: flex;
+}
+.filter-list__links {
+  padding: 20px 10px;
+  transition: ease-in-out 0.1s;
+}
+.filter-list__links:hover {
+  background: #f5f5f5;
+}
+.filter-list__link {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.filter-list__chevron {
+  width: 10px;
+  margin-left: 10px;
 }
 
 body {

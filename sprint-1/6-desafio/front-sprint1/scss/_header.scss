@@ -111,6 +111,18 @@
     &:hover {
       background: $white-ice;
     }
+
+    @include tablet {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
   }
 
   &__link-img {

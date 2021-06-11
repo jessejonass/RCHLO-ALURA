@@ -27,7 +27,7 @@ $black: #000;
   font-size: calculateRem($size);
 }
 
-@import 'header', 'breadcrumb';
+@import 'header', 'breadcrumb', 'filters';
 
 body {
   font-family: 'Inter', sans-serif;

@@ -1,0 +1,39 @@
+.filter {
+  width: 100%;
+  
+  &__container {
+    max-width: 1150px;
+    margin: 0 auto;
+    border-bottom: 1px solid $grey-100;
+  }
+
+  &__list {
+    display: flex;
+  }
+}
+
+.filter-list {
+  display: flex;
+
+  &__links {
+    padding: 20px 10px;
+    transition: ease-in-out 0.1s;
+
+    &:hover {
+      background: $white-ice;
+    }
+  }
+
+  &__link {
+    @include fontSize(11px);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__chevron {
+    width: 10px;
+    margin-left: 10px;
+  }
+}
