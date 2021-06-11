@@ -1,0 +1,44 @@
+.breadcrumb {
+  width: 100%;
+
+  &__container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    border-bottom: 1px solid $grey-100;
+
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+
+  &__items {
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '/';
+      position: absolute;
+      margin: 0 auto;
+    }
+  }
+
+  &__link {
+    padding: 0 10px;
+    @include fontSize(12px);
+    font-weight: 500;
+
+    &--current {
+      font-weight: 700;
+      color: $black;  
+    }
+  }
+}
