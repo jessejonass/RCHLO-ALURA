@@ -29,10 +29,9 @@ export class Conta {
     return this._saldo;
   }
 
-  // método público consumindo um método privado
+  // método abstrato - deve ser sempre sobrescrito
   sacar(valor) {
-    let taxa = 1;
-    return this._sacar(valor, taxa); // retorna o valor do metodo privado
+    throw new Error('O método sacar da Conta é abstrato');
   }
 
   // método privado que foi usado pelo método público
