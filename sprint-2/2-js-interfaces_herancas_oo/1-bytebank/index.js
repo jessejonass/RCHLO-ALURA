@@ -1,7 +1,7 @@
-import { ContaCorrente } from './ContaCorrente.js';
-import { ContaPoupanca } from './ContaPoupanca.js';
-import { Cliente } from './Cliente.js';
-import { ContaSalario } from './ContaSalario.js';
+import { ContaCorrente } from './Conta/ContaCorrente.js';
+import { ContaPoupanca } from './Conta/ContaPoupanca.js';
+import { Cliente } from './Conta/Cliente.js';
+import { ContaSalario } from './Conta/ContaSalario.js';
 
 // parametros para o constructor constructor
 const clienteHellen = new Cliente('Hellen Nuni', 19563210144);
