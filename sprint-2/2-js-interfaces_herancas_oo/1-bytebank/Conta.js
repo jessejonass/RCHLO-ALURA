@@ -1,8 +1,13 @@
+// classe abstrata - não pode ser instanciada
 export class Conta {
   // atributos privados - deve estar no constructor
   // _saldo = 0;
   // _cliente;
   constructor(saldoInicial, cliente, agencia) {
+    if (this.constructor === Conta) {
+      throw new Error('Instanciação de objeto do tipo Conta não recomendada');
+    }
+
     this._saldo = saldoInicial;
     this._cliente = cliente;
     this._agencia = agencia;
