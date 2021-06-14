@@ -1,6 +1,7 @@
 export class Cliente {
-  nome;
-  _cpf;
+  // declaracao de atributos dentro do constructor por boas práticas
+  // nome;
+  // _cpf;
 
   get cpf() {
     return this._cpf;
