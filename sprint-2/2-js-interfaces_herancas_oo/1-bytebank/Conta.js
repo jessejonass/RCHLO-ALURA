@@ -27,9 +27,10 @@ export class Conta {
   // métodos
   sacar(valor) {
     let taxa = 1;
+    const valorSacado = taxa * valor;
 
-    if (this._saldo >= valor) {
-      this._saldo -= valor;
+    if (this._saldo >= valorSacado) {
+      this._saldo -= valorSacado;
       return valorSacado;
     }
   }
@@ -42,5 +43,9 @@ export class Conta {
   transferir(valor, conta) {
     const valorRetirado = this.sacar(valor);
     conta.depositar(valorRetirado);
+  }
+
+  teste() {
+    console.log('teste na classe conta normal');
   }
 }
