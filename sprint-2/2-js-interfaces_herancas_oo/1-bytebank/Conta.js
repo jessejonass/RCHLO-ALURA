@@ -24,15 +24,23 @@ export class Conta {
     return this._saldo;
   }
 
-  // métodos
+  // método público consumindo um método privado
   sacar(valor) {
     let taxa = 1;
+    return this._sacar(valor, taxa); // retorna o valor do metodo privado
+  }
+
+  // método privado que foi usado pelo método público
+  _sacar(valor, taxa) {
     const valorSacado = taxa * valor;
 
     if (this._saldo >= valorSacado) {
       this._saldo -= valorSacado;
       return valorSacado;
     }
+
+    // else
+    return 0;
   }
 
   depositar(valor) {
@@ -43,9 +51,5 @@ export class Conta {
   transferir(valor, conta) {
     const valorRetirado = this.sacar(valor);
     conta.depositar(valorRetirado);
-  }
-
-  teste() {
-    console.log('teste na classe conta normal');
   }
 }

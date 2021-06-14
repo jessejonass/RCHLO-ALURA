@@ -1,6 +1,5 @@
 import { ContaCorrente } from './ContaCorrente.js';
 import { ContaPoupanca } from './ContaPoupanca.js';
-import { Conta } from './Conta.js';
 import { Cliente } from './Cliente.js';
 
 // parametros para o constructor constructor
