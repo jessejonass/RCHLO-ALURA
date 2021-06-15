@@ -4,7 +4,7 @@ class MensagemView extends View {
   }
   
   // template a ser devolvido
-  _template(model) {
+  template(model) {
     return model.texto 
       ? `<p class="alert alert-info">${model.texto}</p>` 
       : '<p></p>';
