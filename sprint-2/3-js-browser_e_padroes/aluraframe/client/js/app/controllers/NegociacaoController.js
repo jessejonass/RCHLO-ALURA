@@ -18,6 +18,11 @@ class NegociacaoController {
     // da NegociacoesView
     this._negociacoesView = new NegociacoesView($('#negociacoesView'));
     this._negociacoesView.update(this._listaNegociacoes);
+
+    // mensagem
+    this._mensagem = new Mensagem();
+    this._mensagemView = new MensagemView($('#mensagemView'));
+    this._mensagemView.update(this._mensagem);
   }
 
   adiciona(e) {
@@ -30,6 +35,9 @@ class NegociacaoController {
     // adicionar a negociação em uma lista - lista em NegociacaoController
     this._listaNegociacoes.adiciona(this._criaNegociacao());
     this._negociacoesView.update(this._listaNegociacoes);
+
+    this._mensagem.texto = 'Negociação adicionada';
+    this._mensagemView.update(this._mensagem);
 
     // chamar o limpador de formulario
     this._limpaFormulario();
