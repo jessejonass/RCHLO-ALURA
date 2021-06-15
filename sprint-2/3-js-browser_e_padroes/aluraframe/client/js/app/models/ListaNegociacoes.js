@@ -10,6 +10,6 @@ class ListaNegociacoes {
 
   // getter para exibir negociacoes
   get negociacoes() {
-    return this._negociacoes;
+    return [].concat(this._negociacoes); // blindando a lista passando uma copia
   }
 }

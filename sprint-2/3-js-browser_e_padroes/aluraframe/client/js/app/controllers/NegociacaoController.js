@@ -13,9 +13,14 @@ class NegociacaoController {
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
     this._listaNegociacoes = new ListaNegociacoes();
+
+    // passando a div#negociacoesView como o parametro elemento do constructor
+    // da NegociacoesView
+    this._negociacoesView = new NegociacoesView($('#negociacoesView'));
+    this._negociacoesView.update(this._listaNegociacoes);
   }
 
-  adicionar(e) {
+  adiciona(e) {
     // prevenindo comportamento padrão do formulário - que inclui reload
     e.preventDefault();
 
@@ -24,16 +29,15 @@ class NegociacaoController {
 
     // adicionar a negociação em uma lista - lista em NegociacaoController
     this._listaNegociacoes.adiciona(this._criaNegociacao());
+    this._negociacoesView.update(this._listaNegociacoes);
 
     // chamar o limpador de formulario
     this._limpaFormulario();
-
-    console.log(this._listaNegociacoes.negociacoes);
   }
 
   // usando a model (classe) de Negociacao em um método auxiliar - interno
   _criaNegociacao() {
-    return  new Negociacao(
+    return new Negociacao(
       DateHelper.textoParaData(this._inputData.value),
       this._inputQuantidade.value,
       this._inputValor.value,
@@ -45,7 +49,6 @@ class NegociacaoController {
     this._inputData.value = '';
     this._inputQuantidade.value = 1;
     this._inputValor.value = 0;
-
     this._inputData.focus();
   }
 }
