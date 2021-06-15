@@ -21,26 +21,17 @@ class NegociacaoController {
     // convertendo data do input para data correta usando regex
     // let data = new Date(this._inputData.value.replace(/-/g, ','));
 
-    let data = new Date(
-      ...this._inputData.value.split('-').map((item, indice) => {
-        // if (indice === 1) {
-        //   // posição 1 - de mês - retorna o mês - 1
-        //   return item - 1;
-        // }
-        // // se não, retorna as datas normais
-        // return item;
-
-        return item - indice % 2;
-      })
-    );
+    let helper = new DateHelper();
 
     // passando para o constructor da model (classe) de negociação
     let negociacao = new Negociacao(
-      data,
+      helper.textoParaData(this._inputData.value),
       this._inputQuantidade.value,
       this._inputValor.value,
     );
+    
     console.log(negociacao);
+    console.log(helper.dataParaTexto(negociacao.data));
 
     // adicionar a negociação em uma lista
   }
