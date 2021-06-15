@@ -1,67 +1,61 @@
 class NegociacaoController {
-  /**
-   * quando o controller for criado peloa 1ªvez,
-   * ele busca os elementos na DOM do document,
-   * guarda nas propriedades da classe.
-   * Evita várias buscas na DOM - usa uma espécie de cache
-   */
   constructor() {
-    // binding - mantem associacao do document.querySelector com o document
     let $ = document.querySelector.bind(document);
     
     this._inputData = $('#data');
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
 
-    let self = this;
+    // lidando com a tabela de lista de negociacoes
+    this._listaNegociacoes = new Bind(
+      new ListaNegociacoes(),
+      new NegociacoesView($('#negociacoesView')),
+      'adiciona', 
+      'remove',
+    );
 
-    this._listaNegociacoes = new Proxy(new ListaNegociacoes(), {
-      get(target, prop, receiver) {
-        if(['adiciona', 'esvazia'].includes(prop) && typeof(target[prop]) == typeof(Function)) {
-          return function() {
-            console.log(`Intercepando o atributo: ${prop}`);
+    // lidando com a mensagem exibida
+    this._mensagem = new Bind(
+      new Mensagem(),
+      new MensagemView($('#mensagemView')),
+      'texto',
+    );
+  }
 
-            Reflect.apply(target[prop], target, arguments);
-            self._negociacoesView.update(target);
-          }
+  importaNegociacoes() {
+    // ajax
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'negociacoes/semana');
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          JSON.parse(xhr.responseText).map(objeto => 
+            new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor)
+          ).forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+          this._mensagem.texto = 'Negociações importadas com sucesso.';
+        } else {
+          console.log(JSON.parse(xhr.responseText));
+          this._mensagem.texto = 'Não foi possível obter as negociações';
         }
-
-        return Reflect.get(target, prop, receiver);
       }
-    });
+    };
 
-    // passando a div#negociacoesView como o parametro elemento do constructor
-    // da NegociacoesView
-    this._negociacoesView = new NegociacoesView($('#negociacoesView'));
-    this._negociacoesView.update(this._listaNegociacoes);
-
-    // mensagem
-    this._mensagem = new Mensagem();
-    this._mensagemView = new MensagemView($('#mensagemView'));
-    this._mensagemView.update(this._mensagem);
+    xhr.send(); // enviar a solicitação
   }
 
   apaga() {
     this._listaNegociacoes.esvazia();
-
     this._mensagem.texto = 'Negociações apagadas';
-    this._mensagemView.update(this._mensagem);
   }
 
   adiciona(e) {
-    // prevenindo comportamento padrão do formulário - que inclui reload
     e.preventDefault();
 
-    // convertendo data do input para data correta usando regex
-    // let data = new Date(this._inputData.value.replace(/-/g, ','));
-
-    // adicionar a negociação em uma lista - lista em NegociacaoController
     this._listaNegociacoes.adiciona(this._criaNegociacao());
 
     this._mensagem.texto = 'Negociação adicionada';
-    this._mensagemView.update(this._mensagem);
-
-    // chamar o limpador de formulario
     this._limpaFormulario();
   }
 
