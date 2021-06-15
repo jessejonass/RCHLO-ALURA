@@ -12,7 +12,23 @@ class NegociacaoController {
     this._inputData = $('#data');
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
-    this._listaNegociacoes = new ListaNegociacoes();
+
+    let self = this;
+
+    this._listaNegociacoes = new Proxy(new ListaNegociacoes(), {
+      get(target, prop, receiver) {
+        if(['adiciona', 'esvazia'].includes(prop) && typeof(target[prop]) == typeof(Function)) {
+          return function() {
+            console.log(`Intercepando o atributo: ${prop}`);
+
+            Reflect.apply(target[prop], target, arguments);
+            self._negociacoesView.update(target);
+          }
+        }
+
+        return Reflect.get(target, prop, receiver);
+      }
+    });
 
     // passando a div#negociacoesView como o parametro elemento do constructor
     // da NegociacoesView
@@ -25,6 +41,13 @@ class NegociacaoController {
     this._mensagemView.update(this._mensagem);
   }
 
+  apaga() {
+    this._listaNegociacoes.esvazia();
+
+    this._mensagem.texto = 'Negociações apagadas';
+    this._mensagemView.update(this._mensagem);
+  }
+
   adiciona(e) {
     // prevenindo comportamento padrão do formulário - que inclui reload
     e.preventDefault();
@@ -34,7 +57,6 @@ class NegociacaoController {
 
     // adicionar a negociação em uma lista - lista em NegociacaoController
     this._listaNegociacoes.adiciona(this._criaNegociacao());
-    this._negociacoesView.update(this._listaNegociacoes);
 
     this._mensagem.texto = 'Negociação adicionada';
     this._mensagemView.update(this._mensagem);

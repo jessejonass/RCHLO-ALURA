@@ -54,7 +54,11 @@
         <button class="btn btn-primary text-center" type="button">
             Importar Negociações
         </button>
-        <button class="btn btn-primary text-center" type="button">
+        <button 
+            onclick="negociacaoController.apaga()" 
+            class="btn btn-primary text-center" 
+            type="button"
+        >
             Apagar
         </button>
     </div> 
@@ -77,5 +81,58 @@
     <script>
         let negociacaoController = new NegociacaoController();
     </script>
-</body>
+
+    <!-- <script>
+        let negociacao = new Proxy(new Negociacao(new Date(), 1, 100), {
+            // get chamado toda vez que eu tentar ler algo do objeto
+            // target: referencia ao obj original que esta sendo encaps pelo proxy
+            // propriedade que está sendo acessada
+            // referencia para o proprio proxy
+            get: function(target, prop, receiver) {
+                console.log(`a propriedade "${prop}" foi interceptada`);
+
+                // retorna o valor que realmente guarda
+                return Reflect.get(target, prop, receiver);
+            }
+        });
+        console.log(negociacao.quantidade);
+        console.log(negociacao.valor);
+    </script> -->
+    
+    <!-- <script>
+        let lista = new Proxy(new ListaNegociacoes(), {
+            // set chamado toda vez que eu tentar ler algo do objeto
+            // target: referencia ao obj original que esta sendo encaps pelo proxy
+            // propriedade que está sendo acessada
+            // referencia para o proprio proxy
+            get(target, prop, receiver) {
+                // se o método ~prop~ que intercepto é 'adiciona' ou 'esvazia'
+                if (['adiciona', 'esvazia'].includes(prop) && typeof(target[prop]) == typeof(Funcion)) {
+                    return function() {
+                        console.log(`Interceptação de: ${prop}`);
+                        Reflect.apply(target[prop], target, arguments);
+                    }
+                }
+
+                return Reflect.get(target, prop, receiver);
+            }
+        });
+        lista.adiciona(new Negociacao(new Date(), 1, 100));
+        lista.esvazia();
+    </script> -->
+
+    <!-- exemplo de proxy -->
+    <!-- <script>
+        let funcionario = {email: 'abc@abc.com'};
+        let funcionarioProxy = new Proxy(funcionario,  {
+
+            get(target, prop, receiver) {
+                console.log('Armadilha aqui!');
+                return Reflect.get(target, prop, receiver);
+            }
+
+        });
+        console.log(funcionarioProxy.email);
+    </script>
+</body> -->
 </html>

@@ -12,4 +12,8 @@ class ListaNegociacoes {
   get negociacoes() {
     return [].concat(this._negociacoes); // blindando a lista passando uma copia
   }
+
+  esvazia() {
+    this._negociacoes = [];
+  }
 }
