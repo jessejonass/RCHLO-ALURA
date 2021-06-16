@@ -2,24 +2,27 @@ class ProductsController {
   constructor() {
     let $ = document.querySelector.bind(document);
 
+    this._productList = new Bind(
+      new ProductsList(),
+      new ProductsView($('.products__row')),
+      'add',
+    );
+
     this._message = new Bind(
       new Message(),
       new MessageView($('#messageView')),
       'message'
     );
 
-    this.allProducts();
+    this._allProducts();
   }
 
-  allProducts() {
-    // TODO: implementar
+  _allProducts() {
+    let service = new ProductService();
 
-    // let service = new ProdutoService();
-    // service
-    //   .obterProdutos()
-    //   .then()
-    //   .catch();
-
-    this._message.message = 'ProductsController ainda não foi implementado.';
+    service.allProducts()
+    .then(products => {
+        products.forEach(p => this._productList.add(p));
+    }).catch(err => this._message.message = err);
   }
 }
