@@ -1,0 +1,38 @@
+$lightest-grey: #e0e0e0;
+$light-grey: #c4c4c4;
+$medium-grey: #757575;
+$dark-grey: #302c2d;
+
+@function calculateRem($size) {
+  @return $size / 16px * 1rem;
+}
+
+@mixin fontSize($size) {
+  font-size: calculateRem($size);
+}
+
+@mixin mobile {
+  @media (max-width: 767.9px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279.9px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 959.9px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@import 'header', 'breadcrumb', 'filters', 'products', 'footer', 'contacts', 'more-info', 'copyrights';

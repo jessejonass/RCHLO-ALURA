@@ -1,0 +1,36 @@
+.breadcrumbs {
+  max-width: 1150px;
+  margin: 0 auto;
+  border-bottom: 1px solid $lightest-grey;
+}
+
+.breadcrumb {
+  margin: 20px 0;
+  @include fontSize(13px);
+  font-weight: 600;
+
+  &__list {
+    display: flex;
+  }
+
+  &__links {
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '/';
+      position: absolute;
+      margin: 0 auto;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 0 10px;
+    color: $medium-grey;
+
+    &--current {
+      font-weight: 700;
+      color: $dark-grey;  
+    }
+  }
+}

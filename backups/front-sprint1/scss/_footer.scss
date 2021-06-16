@@ -1,0 +1,85 @@
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @include desktop {
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.offers {
+  display: flex;
+  align-items: center;
+  
+  @include tablet {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__title {
+    @include fontSize(13px);
+    text-transform: uppercase;
+    color: $medium-grey;
+
+    @include tablet {
+      margin-bottom: 12px;
+    }
+  
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__options, &__email {
+    border: none;
+    background: none;
+    border-bottom: 2px solid #ddd;
+    margin-left: 4px;
+  }
+
+  &__button {
+    background: $lightest-grey;
+    color: $light-grey;
+    border: none;
+    margin-left: 4px;
+    padding: 6px 20px;
+    border-radius: 4px;
+  }
+}
+
+.mobile-apps {
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    margin-top: 12px;
+  }
+
+  @include mobile {
+    margin-top: 12px;
+  }
+
+  &__title {
+    @include fontSize(13px);
+    text-transform: uppercase;
+    color: $medium-grey;
+  }
+  &__img {
+    height: 30px;
+    margin-left: 8px;
+  }
+}
