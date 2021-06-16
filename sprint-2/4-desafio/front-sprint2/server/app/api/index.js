@@ -1,7 +1,7 @@
 /* Código simplório, apenas para fornecer o serviço para a aplicação */
 var api = {};
 
-var produtos = [
+var products = [
   {
     imagem: "assets/c1.webp",
     descricao:
@@ -77,7 +77,7 @@ var produtos = [
 ];
 
 api.lista = function (req, res) {
-  res.json(produtos);
+  res.json(products);
 };
 
 module.exports = api;

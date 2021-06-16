@@ -6,10 +6,10 @@ class ProductService {
   allProducts() {
     return new Promise((resolve, reject) => {
       this._http
-      .get('/produtos')
-      .then(produtos => {
+      .get('/products')
+      .then(products => {
         resolve(
-          produtos.map(produto => new Product(produto.imagem, produto.descricao, produto.valor)));
+          products.map(produto => new Product(produto.imagem, produto.descricao, produto.valor)));
       })
       .catch(err => {
         console.log(err);

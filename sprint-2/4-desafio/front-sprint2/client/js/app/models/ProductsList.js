@@ -1,14 +1,13 @@
 class ProductsList {
   constructor() {
-    this._produtos = [];
+    this._products = [];
   }
 
-  get produtos() {
-    // cópia de produtos para blindar o this._produtos
-    return [].concat(this._produtos);
+  get products() {
+    return [].concat(this._products);
   }
 
   add(produto) {
-    this._produtos.push(produto);
+    this._products.push(produto);
   }
 }
