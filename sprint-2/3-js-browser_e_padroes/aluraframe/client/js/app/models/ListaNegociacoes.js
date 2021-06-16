@@ -4,6 +4,14 @@ class ListaNegociacoes {
   }
 
   // metodos
+  ordena(criterio) {
+    this._negociacoes.sort(criterio);        
+  }
+
+  inverteOrdem() {
+    this._negociacoes.reverse();
+  }
+
   adiciona(negociacao) {
     this._negociacoes.push(negociacao);
   }

@@ -6,12 +6,18 @@ class NegociacaoController {
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
 
+    // quando a página for carregada, não tem critério. 
+    // Só passa a ter quando ele começa a clicar nas colunas
+    this._ordemAtual = ''; 
+
     // lidando com a tabela de lista de negociacoes
     this._listaNegociacoes = new Bind(
       new ListaNegociacoes(),
       new NegociacoesView($('#negociacoesView')),
       'adiciona', 
-      'remove',
+      'esvazia',
+      'ordena',
+      'inverteOrdem',
     );
 
     // lidando com a mensagem exibida
@@ -24,15 +30,25 @@ class NegociacaoController {
 
   importaNegociacoes() {
     let service = new NegociacaoService();
-    service.obterNegociacoesDaSemana((err, negociacoes) => {
-      if (err) {
-        this._mensagem.texto = err;
-        return ;
-      }
 
-      negociacoes.forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+    Promise.all([
+      service.obterNegociacoesDaSemana(),
+      service.obterNegociacoesDaSemanaAnterior(),
+      service.obterNegociacoesDaSemanaRetrasada(),
+    ]).then(negociacoes => {
+      negociacoes.reduce((achatado, array) => achatado.concat(array), [])
+      .forEach(n => this._listaNegociacoes.adiciona(n));
       this._mensagem.texto = 'Negociações importadas com sucesso.';
-    });
+    }).catch(err => this._mensagem.texto = err);
+  }
+
+  ordena(coluna) {
+    if(this._ordemAtual == coluna) {
+      this._listaNegociacoes.inverteOrdem();
+    } else {
+      this._listaNegociacoes.ordena((a, b) => a[coluna] - b[coluna]);
+    }
+    this._ordemAtual = coluna;
   }
 
   apaga() {
