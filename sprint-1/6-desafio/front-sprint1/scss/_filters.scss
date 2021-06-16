@@ -5,17 +5,47 @@
     max-width: 1150px;
     margin: 0 auto;
     border-bottom: 1px solid $grey-100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__list {
     display: flex;
+    align-items: center;
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+  }
+
+  &__grids {
+    display: flex;
+
+    &-button {
+      height: 20px;
+      width: 40px;
+      border: none;
+      background: none;
+    }
+
+    &-img {
+      height: 100%;
+    }
   }
 }
 
 .filter-list {
   display: flex;
 
-  &__links {
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @include fontSize(11px);
+    text-transform: uppercase;
     padding: 20px 10px;
     transition: ease-in-out 0.1s;
 
@@ -24,16 +54,47 @@
     }
   }
 
-  &__link {
-    @include fontSize(11px);
-    text-transform: uppercase;
-
-    display: flex;
-    align-items: center;
-  }
-
   &__chevron {
     width: 10px;
+    margin-left: 10px;
+  }
+}
+
+.more-filter {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.1s;
+    padding: 6px 0 6px 6px;
+    @include fontSize(11px);
+    text-transform: uppercase;
+    border-radius: 4px;
+
+    &:hover {
+      background: $white-ice;
+    }
+  }
+
+  &__filter {
+    width: 10px;
+    margin-left: 10px;
+  }
+
+  &__count {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+
+    background: $black;
+    color: $white-ice;
+    font-weight: 600;
+    @include fontSize(10px);
+
     margin-left: 10px;
   }
 }
