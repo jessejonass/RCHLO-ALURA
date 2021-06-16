@@ -1,0 +1,3 @@
+class ProductsList {
+  // TODO: implementar
+}
