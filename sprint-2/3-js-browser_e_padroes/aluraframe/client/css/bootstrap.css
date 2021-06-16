@@ -6758,3 +6758,12 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.ordena {
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.ordena:hover {
+  background: #f6f6f6;
+}
