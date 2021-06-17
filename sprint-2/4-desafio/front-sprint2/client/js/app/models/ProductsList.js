@@ -10,4 +10,8 @@ class ProductsList {
   add(produto) {
     this._products.push(produto);
   }
+
+  clear() {
+    this._products = [];
+  }
 }

@@ -34,13 +34,16 @@
               <img class="header__img" src="assets/riachuelo.svg" alt="Logo" />
             </h1>
           </div>
+
           <div class="header__search">
-            <img class="header__icon" src="assets/search.svg" />
-            <input
-              class="header__input"
-              type="search"
-              placeholder="O que você está procurando?"
-            />
+            <form onsubmit="productsController.search(event)">
+              <img class="header__icon" src="assets/search.svg" />
+              <input
+                class="header__input"
+                type="search"
+                placeholder="O que você está procurando?"
+              />
+            </form>
           </div>
 
           <nav class="header__menu menu">
