@@ -4,12 +4,12 @@ import CardNota from '../CardNota';
 import './styles.css';
 
 export default class ListaDeNotas extends React.Component {
-  render() {
+    render() {
     return (
       <ul className="lista-notas">
-        {Array.of('Trabalho', 'Trabalho', 'Estudos').map((item, index) => (
+        {this.props.notas.map((nota, index) => (
           <li className="lista-notas_item" key={index}>
-            <CardNota />
+            <CardNota titulo={nota.titulo} texto={nota.texto}/>
           </li>
         ))}
       </ul>
