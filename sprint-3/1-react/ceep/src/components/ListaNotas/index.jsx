@@ -9,7 +9,12 @@ export default class ListaDeNotas extends React.Component {
       <ul className="lista-notas">
         {this.props.notas.map((nota, index) => (
           <li className="lista-notas_item" key={index}>
-            <CardNota titulo={nota.titulo} texto={nota.texto}/>
+            <CardNota 
+              titulo={nota.titulo} 
+              texto={nota.texto}
+              deletarNota={this.props.deletarNota}
+              index={index}
+            />
           </li>
         ))}
       </ul>

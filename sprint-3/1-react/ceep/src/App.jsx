@@ -22,11 +22,22 @@ export default class App extends React.Component {
     this.setState(novoEstado)
   }
 
+  deletarNota(index) {
+    let listaNotas = this.state.notas;
+    listaNotas.splice(index, 1);
+    this.setState({
+      notas: listaNotas,
+    });
+  }
+
   render() {
     return (
       <section className="conteudo">
         <FormCadastro criarNota={this.criarNota.bind(this)} />
-        <ListaNotas notas={this.state.notas} />
+        <ListaNotas 
+          notas={this.state.notas} 
+          deletarNota={this.deletarNota.bind(this)} 
+        />
       </section>
     );
   }
