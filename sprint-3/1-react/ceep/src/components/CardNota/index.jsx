@@ -21,6 +21,8 @@ export default class CardNota extends React.Component {
           >
             <img className="card-nota_img" src={deleteImg} alt="Delete" />
           </button>
+
+          <strong>{this.props.categoria}</strong>
         </header>
 
         <p className="card-nota_texto">{this.props.texto}</p>

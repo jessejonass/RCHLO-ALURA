@@ -8,6 +8,7 @@ export default class FormCadastro extends React.Component {
 
     this.titulo = '';
     this.texto = '';
+    this.categoria = 'Sem categoria';
   }
 
   _handleMudancaTitulo(e) {
@@ -20,17 +21,31 @@ export default class FormCadastro extends React.Component {
     this.texto = e.target.value;
   }
 
+  _handleMudancaCategoria(e) {
+    e.stopPropagation();
+    this.categoria = e.target.value;
+  }
+
   _handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
 
-
-    this.props.criarNota(this.titulo, this.texto);
+    this.props.criarNota(this.titulo, this.texto, this.categoria);
   }
 
   render() {
     return (
       <form className="form-cadastro" onSubmit={this._handleSubmit.bind(this)}>
+        <select
+          onChange={this._handleMudancaCategoria.bind(this)}
+          className="form-cadastro_input"
+        >
+          <option value="Sem categoria">Sem categoria</option>
+          {this.props.categorias.map(c => (
+            <option value={c}>{c}</option>
+          ))}
+        </select>
+        
         <input 
         type="text" 
         placeholder="Título"

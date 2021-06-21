@@ -12,6 +12,7 @@ export default class ListaDeNotas extends React.Component {
             <CardNota 
               titulo={nota.titulo} 
               texto={nota.texto}
+              categoria={nota.categoria}
               deletarNota={this.props.deletarNota}
               index={index}
             />

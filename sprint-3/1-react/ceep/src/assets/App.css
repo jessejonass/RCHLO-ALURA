@@ -2,6 +2,12 @@
   display: flex;
 }
 
+.conteudo-principal {
+  flex-grow: 3;
+  padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 :root {
   --primaria: #58a4b0;
   --secundaria: #373f51;
