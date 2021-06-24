@@ -11,10 +11,12 @@ import rchloLogo from '../../assets/rchlo.svg';
 import Menu from '../Menu';
 
 import { useFilter } from '../../hooks/useFilter';
+import { useProducts } from '../../hooks/useProducts';
 
 export default function Header() {
   const [search, setSearch] = useState();
-  const { addFilter, products } = useFilter();
+  const { addFilter } = useFilter();
+  const { products } = useProducts();
 
   function handleFilter(e) {
     e.preventDefault();

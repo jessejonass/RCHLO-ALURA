@@ -5,12 +5,14 @@ import ProductItem from './ProductItem';
 
 import { useLoading } from '../../hooks/useLoading';
 import { useFilter } from '../../hooks/useFilter';
+import { useProducts } from '../../hooks/useProducts';
 
 import spinner from '../../assets/spinner.svg';
 
 export default function Products() {
   const { isLoading } = useLoading();
-  const { products, filtered } = useFilter();
+  const { filtered } = useFilter();
+  const { products } = useProducts();
 
   return (
     <>
