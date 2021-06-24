@@ -42,8 +42,10 @@ class ProductsController {
       this._productList.clear();
 
       productList.filter(
-        p => p.descricao.toUpperCase().includes(searchTerm.toUpperCase()) 
-        && this._productList.add(p)
+        p => {
+          return p.descricao.toUpperCase().includes(searchTerm.toUpperCase()) 
+          && this._productList.add(p)
+        }
       );
     }
   }
