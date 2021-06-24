@@ -1,0 +1,20 @@
+.main__filters .filters__item {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  list-style: none;
+}
+.main__filters .filters__item:hover {
+  cursor: pointer;
+  background-color: rgba(38, 30, 30, 0.04);
+}
+.main__filters .filters__label {
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: #261e1e;
+}
+.main__filters .filters__img {
+  height: 20px;
+  margin-left: 8px;
+}

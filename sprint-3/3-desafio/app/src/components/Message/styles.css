@@ -1,0 +1,39 @@
+.message__content {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  user-select: none;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  color: #721c24;
+  font-weight: 600;
+  padding: 10px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 9999;
+}
+
+.message__content--success {
+  background: rgb(199, 240, 221);
+  color: #353535;
+}
+
+.message__content--hidden {
+  display: none;
+}
+
+.message__close {
+  width: 30px;
+  height: 100%;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+  color: #f5f5f5;
+}
+
+.message__close--success {
+  color: #353535;
+}

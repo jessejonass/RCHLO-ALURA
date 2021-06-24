@@ -1,0 +1,31 @@
+.main__spinner {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__spinner .main__spinner-icon {
+  width: 40px;
+}
+
+.main__products {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main__products .products__row {
+  margin: 0 auto;
+}
+
+.main__products .products__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .main__products .products__list {
+    flex-wrap: wrap;
+  }
+}

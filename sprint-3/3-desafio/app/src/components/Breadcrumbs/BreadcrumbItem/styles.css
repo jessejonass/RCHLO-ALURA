@@ -1,0 +1,26 @@
+.main__breadcrumbs .breadcrumbs__item {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #585858;
+  list-style: none;
+}
+@media (max-width: 1200px) {
+  .main__breadcrumbs .breadcrumbs__item {
+    display: none;
+  }
+}
+.main__breadcrumbs .breadcrumbs__item:not(:last-child):hover {
+  text-decoration: underline;
+}
+.main__breadcrumbs .breadcrumbs__item--active {
+  color: #261e1e;
+}
+@media (max-width: 1200px) {
+  .main__breadcrumbs .breadcrumbs__item--active {
+    display: block;
+    text-align: center;
+    font-size: 1.4375rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}

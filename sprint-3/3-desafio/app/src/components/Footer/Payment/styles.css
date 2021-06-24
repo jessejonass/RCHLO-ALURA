@@ -1,0 +1,40 @@
+.footer__payment {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.footer__payment .payment {
+  display: flex;
+}
+.footer__payment .payment__title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer__payment .payment__alternatives {
+  width: 50%;
+}
+.footer__payment .payment__img {
+  margin: 2px;
+  width: auto;
+}
+.footer__payment .payment__social {
+  flex-grow: 1;
+}
+.footer__payment .payment__social .social__icons {
+  display: flex;
+}
+.footer__payment .payment__social .social__icon {
+  width: 50px;
+}
+.footer__payment .payment__social .social__icon .icon__img {
+  display: block;
+  margin: auto;
+}
+.footer__payment .payment__social .social__icon .icon__text {
+  padding-top: 4px;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  text-align: center;
+}
+.footer__payment .payment__accessibility {
+  flex-grow: 1;
+}
