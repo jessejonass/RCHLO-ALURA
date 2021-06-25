@@ -1,9 +1,12 @@
 import React from 'react';
 import { TextField, Button } from '@material-ui/core';
 
-export default function DadosUsuario() {
+export default function DadosUsuario({ onSubmit }) {
   return (
-    <form>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      onSubmit();
+    }}>
       <TextField 
         id="email" 
         label="E-mail" 
@@ -11,6 +14,7 @@ export default function DadosUsuario() {
         variant="outlined"
         fullWidth
         margin="normal"
+        required
       />
 
       <TextField 
@@ -20,6 +24,7 @@ export default function DadosUsuario() {
         variant="outlined"
         fullWidth
         margin="normal"
+        required
       />
 
       <Button 
