@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { TextField, Button } from '@material-ui/core';
+import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 
-export default function DadosUsuario({ onSubmit, validations }) {
+export default function DadosUsuario({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   
@@ -11,6 +12,8 @@ export default function DadosUsuario({ onSubmit, validations }) {
       texto: '',
     },
   });
+
+  const validations = useContext(ValidacoesCadastro);
   
   function validateFields(e) {
     const { name, value } = e.target;

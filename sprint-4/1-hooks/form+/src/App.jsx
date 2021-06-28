@@ -4,6 +4,7 @@ import FormCadastro from './components/FormCadastro/FormCadastro';
 import './App.css';
 
 import { cpfValidator, nameValidator, passValidator } from './models/cadastro';
+import ValidacoesCadastro from './contexts/ValidacoesCadastro';
 
 function onSubmit(data) {
   console.log(data);
@@ -20,10 +21,15 @@ export default function App() {
         Formulário de cadastro
       </Typography>
 
-      <FormCadastro 
-        onSubmit={onSubmit}
-        validations={{ cpf: cpfValidator, pass: passValidator, nome: nameValidator }}
-      />
+      <ValidacoesCadastro.Provider value={{
+        cpf: cpfValidator, 
+        pass: passValidator, 
+        nome: nameValidator
+      }}>
+        <FormCadastro 
+          onSubmit={onSubmit}
+        />
+      </ValidacoesCadastro.Provider>
     </Container>
   );
 }
