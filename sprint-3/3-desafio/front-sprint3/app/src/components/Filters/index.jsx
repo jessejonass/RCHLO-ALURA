@@ -7,9 +7,12 @@ export default function Filters() {
   const [filters, setFilters] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333/filters')
-    .then(response => response.json())
-    .then(data => setFilters(data));
+    async function loadFilters() {
+      await fetch('http://localhost:3333/filters')
+      .then(response => response.json())
+      .then(data => setFilters(data));
+    }
+    loadFilters();
   }, []);
 
   return (

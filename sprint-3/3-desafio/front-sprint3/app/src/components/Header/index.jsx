@@ -16,11 +16,11 @@ import { useProducts } from '../../hooks/useProducts';
 export default function Header() {
   const [search, setSearch] = useState();
   const { addFilter } = useFilter();
-  const { products } = useProducts();
+  // const { products } = useProducts();
 
   function handleFilter(e) {
     e.preventDefault();
-    products.length > 0 && addFilter(search);
+    addFilter(search);
   }
   
   return (
