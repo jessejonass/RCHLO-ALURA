@@ -3,22 +3,10 @@ import { Container, Typography } from '@material-ui/core';
 import FormCadastro from './components/FormCadastro/FormCadastro';
 import './App.css';
 
+import { cpfValidator, nameValidator, passValidator } from './models/cadastro';
+
 function onSubmit(data) {
   console.log(data);
-}
-
-function cpfValidator(cpf) {
-  if (cpf.length !== 11) {
-    return {
-      valido: false,
-      texto: 'O CPF deve ter 11 dígitos',
-    }
-  } else {
-    return {
-      valido: true,
-      texto: '',
-    }
-  }
 }
 
 export default function App() {
@@ -34,7 +22,7 @@ export default function App() {
 
       <FormCadastro 
         onSubmit={onSubmit}
-        cpfValidator={cpfValidator}
+        validations={{ cpf: cpfValidator, pass: passValidator, nome: nameValidator }}
       />
     </Container>
   );

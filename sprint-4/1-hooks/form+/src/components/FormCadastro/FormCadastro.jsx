@@ -5,7 +5,7 @@ import DadosPessoais from './DadosPessoais';
 import DadosUsuario from './DadosUsuario';
 import DadosEntrega from './DadosEntrega';
 
-export default function FormCadastro({ onSubmit, cpfValidator }) {
+export default function FormCadastro({ onSubmit, validations }) {
   const [receivedData, setReceivedData] = useState({});
   const [step, setStep] = useState(0);
 
@@ -13,12 +13,12 @@ export default function FormCadastro({ onSubmit, cpfValidator }) {
     if(step === forms.length - 1) {
       onSubmit(receivedData);
     }
-  }, [receivedData, step]);
+  }, [receivedData, step]); // eslint-disable-line
 
   const forms = [
-    <DadosUsuario onSubmit={receiveData} />,
-    <DadosPessoais onSubmit={receiveData} cpfValidator={cpfValidator} />,
-    <DadosEntrega onSubmit={receiveData} />,
+    <DadosUsuario onSubmit={receiveData} validations={validations} />,
+    <DadosPessoais onSubmit={receiveData} validations={validations} />,
+    <DadosEntrega onSubmit={receiveData} validations={validations} />,
     <Typography variant="h5">Obrigado pelo cadastro</Typography>
   ];
 
