@@ -1,37 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { TextField, Button } from '@material-ui/core';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
+import useErrors from '../../hooks/useErrors';
 
 export default function DadosUsuario({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
-  
-  const [errors, setErrors] = useState({
-    pass: {
-      valido: true,
-      texto: '',
-    },
-  });
 
   const validations = useContext(ValidacoesCadastro);
-  
-  function validateFields(e) {
-    const { name, value } = e.target;
-    
-    const newState = {...errors};
-    
-    newState[name] = validations[name](value)
-    setErrors(newState);
-  }
-
-  function isValid() {
-    for (let e in errors) {
-      if (!errors[e].valido) {
-        return false;
-      }
-    }
-    return true;
-  }
+  const [errors, validateFields, isValid] = useErrors(validations);
 
   return (
     <form onSubmit={(e) => {
