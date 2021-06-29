@@ -14,7 +14,7 @@ export default function Categories() {
   return (
     <ul className="lista-categorias container flex">
       {categories.map(c => (
-        <Link to={`categoria/${c.id}`}>
+        <Link to={`/categoria/${c.id}`}>
           <li 
             className={`
               lista-categorias__categoria 
