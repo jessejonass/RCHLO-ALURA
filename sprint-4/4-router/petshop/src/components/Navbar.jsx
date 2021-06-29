@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import image from '../assets/img/doguito.svg';
 import '../assets/css/componentes/cabecalho.css';
@@ -21,19 +22,24 @@ export default function Navbar() {
       <nav className="menu-cabecalho">
         <ul className="menu-itens">
           <li>
-            <a className="menu-item menu-item--entrar" href="/login">Entrar</a>
+            <Link 
+              className="menu-item menu-item--entrar" 
+              to="/login"
+            >
+                Entrar
+            </Link>
           </li>
 
           <li>
-            <a className="menu-item" href="/produtos">Produtos</a>
+            <Link className="menu-item" to="/produtos">Produtos</Link>
           </li>
 
           <li>
-            <a className="menu-item" href="/">Blog</a>
+            <Link className="menu-item" to="/">Blog</Link>
           </li>
 
           <li>
-            <a className="menu-item" href="/sobre">Sobre</a>
+            <Link className="menu-item" to="/sobre">Sobre</Link>
           </li>
         </ul>
       </nav>
