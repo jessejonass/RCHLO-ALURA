@@ -5,16 +5,20 @@ import './assets/css/base/base.css';
 import Home from './paginas/Home';
 import Sobre from './paginas/Sobre';
 import NotFound from './paginas/NotFound';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/sobre" component={Sobre} />
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+    <>
+      <Navbar />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/sobre" component={Sobre} />
+          <Route component={NotFound} />
+        </Switch>
+      </BrowserRouter>
+    </>
   )
 }
 
