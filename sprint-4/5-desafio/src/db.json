@@ -1,0 +1,181 @@
+{
+  "categories": [
+      {
+          "id": 1,
+          "label": "Novidades",
+          "link": "#home"
+      },
+      {
+          "id": 2,
+          "label": "Feminino",
+          "link": "#home"
+      },
+      {
+          "id": 3,
+          "label": "Masculino",
+          "link": "#home"
+      },
+      {
+          "id": 4,
+          "label": "Infantil",
+          "link": "#home"
+      },
+      {
+          "id": 5,
+          "label": "Moda Íntima",
+          "link": "#home"
+      },
+      {
+          "id": 6,
+          "label": "Calçados",
+          "link": "#home"
+      },
+      {
+          "id": 7,
+          "label": "Acessórios e Relógios",
+          "link": "#home"
+      },
+      {
+          "id": 8,
+          "label": "Beleza e Perfume",
+          "link": "#home"
+      },
+      {
+          "id": 9,
+          "label": "Casa Riachuelo",
+          "link": "#home"
+      },
+      {
+          "id": 10,
+          "label": "Eletrônicos",
+          "link": "#home"
+      },
+      {
+          "id": 11,
+          "label": "Personagens",
+          "link": "#home"
+      },
+      {
+          "id": 12,
+          "label": "Outlet",
+          "link": "#home"
+      }
+  ],
+  "current": [
+      {
+          "id": 1,
+          "link": "#home",
+          "name": "Home"
+      },
+      {
+          "id": 2,
+          "link": "#home",
+          "name": "Infantil"
+      },
+      {
+          "id": 3,
+          "link": "#home",
+          "name": "Personagens"
+      },
+      {
+          "id": 4,
+          "name": "Mario Bros"
+      }
+  ],
+  "products": [
+    {
+        "sku": 1,
+        "image": "https://static.riachuelo.com.br/RCHLO/13834193005/portrait/3107b7473df334c6ff206cd78d16dec86d7dfe9a.jpg?imwidth=450",
+        "name": "Jaqueta Puffer Juvenil Com Capuz Super Mario Branco Tam 10 a 18",
+        "price": "199,90"
+    },
+    {
+        "sku": 2,
+        "image": "https://static.riachuelo.com.br/RCHLO/14124998003/portrait/cd948d80fe8a1fdc873f8dca1f3c4c468253bf1d.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Curta Super Mario Azul Tam 4 a 10",
+        "price": "39,90"
+    },
+    {
+        "sku": 3,
+        "image": "https://static.riachuelo.com.br/RCHLO/14113724002/portrait/e06b8846981253c9702e71a27288a61663f319c0.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Curta Super Mario Branco Tam 4 a 10",
+        "price": "49,90"
+    },
+    {
+        "sku": 4,
+        "image": "https://static.riachuelo.com.br/RCHLO/14125021001/portrait/a53fcda4f1ea1e04f5d67f4d4fe98248f25bcd73.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Longa Super Mario Vermelho Tam 4 a 10",
+        "price": "49,90"
+    },
+    {
+        "sku": 5,
+        "image": "https://static.riachuelo.com.br/RCHLO/14071894005/portrait/53d381db0f2d3aac09496806ba1144573745470f.jpg?imwidth=450",
+        "name": "Camiseta Juvenil Manga Curta Mario Bros Cinza",
+        "price": "39,90"
+    },
+    {
+        "sku": 6,
+        "image": "https://static.riachuelo.com.br/RCHLO/14108208001/portrait/0186f2eed2ad1983c7568ed71e82805fa020fa29.jpg?imwidth=450",
+        "name": "Camiseta Juvenil Manga Curta Super Mario Azul Tam 10 a 18",
+        "price": "39,90"
+    },
+    {
+        "sku": 7,
+        "image": "https://static.riachuelo.com.br/RCHLO/14040174004/portrait/f10a3e016dd974dbdc7dfaefa41a47599557a58a.jpg?imwidth=450",
+        "name": "Regata Infantil Mario Bros Branco Tam 4 a 10",
+        "price": "29,90"
+    },
+    {
+        "sku": 8,
+        "image": "https://static.riachuelo.com.br/RCHLO/14063190002/portrait/cc35a65dd29d20d63291655b27064d693d1c4f81.jpg?imwidth=450",
+        "name": "Camiseta Juvenil Manga Curta Super Mario Branco Tam 10 a 18",
+        "price": "49,90"
+    },
+    {
+        "sku": 9,
+        "image": "https://static.riachuelo.com.br/RCHLO/14053705002/portrait/d9437244ad634153c6fdaa6d75eedbd5f99f5cad.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Curta Super Star Mario Bros Cinza Mescla Chumbo Tam 4 a 10",
+        "price": "39,90"
+    },
+    {
+        "sku": 10,
+        "image": "https://static.riachuelo.com.br/RCHLO/13372904003/portrait/a7fe432aadb405d451d9c973aa426d12ba9b6e4c.jpg?imwidth=450",
+        "name": "Blusa de Moletom Juvenil com Capuz Mario Bros Cinza Mescla Tam 10 a 16",
+        "price": "149,90"
+    },
+    {
+        "sku": 11,
+        "image": "https://static.riachuelo.com.br/RCHLO/14029170004/portrait/87d851a2d7c2aa073cf01645731cdedc156d78a5.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Curta Mario Bros Vermelho Tam 4 a 10",
+        "price": "49,90"
+    },
+    {
+        "sku": 12,
+        "image": "https://static.riachuelo.com.br/RCHLO/14051664004/portrait/7da83c983794b731e36ba2b7ff1621efda23e4d3.jpg?imwidth=450",
+        "name": "Camiseta Infantil Manga Curta Mário Bros Vermelha Tam 4 a 10",
+        "price": "39,90"
+    }
+  ],
+  "filters": [
+    {
+        "id": "size",
+        "label": "Tamanho"
+    },
+    {
+        "id": "color",
+        "label": "Cor"
+    },
+    {
+        "id": "department",
+        "label": "Departamento"
+    },
+    {
+        "id": "category",
+        "label": "Categoria"
+    },
+    {
+        "id": "sleeve",
+        "label": "Manga"
+    }
+  ]
+}
