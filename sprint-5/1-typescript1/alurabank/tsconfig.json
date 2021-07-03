@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "ES6",
     "outDir": "app/js", // pasta de saída,
-    "noEmitOnError": true // nao gera pasta js se houver erro no ts
+    "noEmitOnError": true, // nao gera pasta js se houver erro no ts
+    "noImplicitAny": true // não permite any
   },
   "include": [
     "app/ts/**/*" // pasta de entrada
