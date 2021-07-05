@@ -12,6 +12,7 @@
   "author": "Jesse Jonas <jessejonas13@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/jquery": "^2.0.42",
     "typescript": "^2.3.2"
   }
 }
