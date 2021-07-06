@@ -16,7 +16,8 @@ export class NegociacaoController {
     this.inputValor = document.querySelector('#valor');
 
     // atualiza a visualização que está em index - #negociacoesView
-    this.negociacoesView.update();
+    // envia lista de negociacoes que a view recebe
+    this.negociacoesView.update(this.negociacoes);
   }
 
   criaNegociacao(): Negociacao {
@@ -29,9 +30,9 @@ export class NegociacaoController {
 
   adiciona(): void {
     const negociacao = this.criaNegociacao();
-    this.negociacoes.adiciona(negociacao);
 
-    console.log(this.negociacoes.lista());
+    this.negociacoes.adiciona(negociacao);
+    this.negociacoesView.update(this.negociacoes);
     
     this.limpaForm();
   }

@@ -4,7 +4,7 @@ export class NegociacoesView {
         // fazer a busca no documento pelo seletor passado na declaração
         this.elemento = document.querySelector(seletor);
     }
-    template() {
+    template(negociacoes) {
         return `
       <table class="table table-hover table-bordered">
         <thead>
@@ -16,13 +16,19 @@ export class NegociacoesView {
         </thead>
 
         <tbody>
-          
+          ${negociacoes.lista().map(n => (`
+              <tr>
+                <td>${n.data}</td>
+                <td>${n.quantidade}</td>
+                <td>${n.valor}</td>
+              </tr>
+            `)).join('')}
         </tbody>
       </table>
     `;
     }
     // renderiza no local selecionado #id o template com o innerHTML
-    update() {
-        this.elemento.innerHTML = this.template();
+    update(negociacoes) {
+        this.elemento.innerHTML = this.template(negociacoes);
     }
 }

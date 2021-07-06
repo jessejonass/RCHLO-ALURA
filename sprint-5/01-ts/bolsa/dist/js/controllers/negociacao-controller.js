@@ -10,7 +10,8 @@ export class NegociacaoController {
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
         // atualiza a visualização que está em index - #negociacoesView
-        this.negociacoesView.update();
+        // envia lista de negociacoes que a view recebe
+        this.negociacoesView.update(this.negociacoes);
     }
     criaNegociacao() {
         return new Negociacao(new Date(this.inputData.value.replace(/-/g, ',')), Number(this.inputQuantidade.value), Number(this.inputValor.value));
@@ -18,7 +19,7 @@ export class NegociacaoController {
     adiciona() {
         const negociacao = this.criaNegociacao();
         this.negociacoes.adiciona(negociacao);
-        console.log(this.negociacoes.lista());
+        this.negociacoesView.update(this.negociacoes);
         this.limpaForm();
     }
     limpaForm() {
