@@ -7,10 +7,10 @@ export abstract class View<T> {
     this.elemento = document.querySelector(seletor);
   }
 
-  abstract template(template: T): string;
+  protected abstract template(template: T): string;
 
   // renderiza no local selecionado #id o template com o innerHTML
-  update(mensagem: T): void {
+  public update(mensagem: T): void {
     this.elemento.innerHTML = this.template(mensagem);
   }
 }
