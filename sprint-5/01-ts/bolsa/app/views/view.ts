@@ -1,9 +1,10 @@
 export abstract class View<T> {
   // dizer que o elemento a ser chamado no index.html é do tipo HTMLElement
   protected elemento: HTMLElement;
+  private escape = false;
 
   // passar para  view um seletor - #id ou .class
-  constructor(seletor: string) {
+  constructor(seletor: string, escape: boolean) {
     this.elemento = document.querySelector(seletor);
   }
 
@@ -11,6 +12,10 @@ export abstract class View<T> {
 
   // renderiza no local selecionado #id o template com o innerHTML
   public update(mensagem: T): void {
-    this.elemento.innerHTML = this.template(mensagem);
+    let template = this.template(mensagem);
+    if (this.escape) {
+      template = template.replace(/<script>[\s\S*?<\/script>]/, '');
+    }
+    this.elemento.innerHTML = template;
   }
 }

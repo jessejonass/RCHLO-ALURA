@@ -7,9 +7,9 @@ export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
         // chama a classe de view e envia para o constructor dela a #id || .class
-        this.negociacoesView = new NegociacoesView('#negociacoesView');
+        this.negociacoesView = new NegociacoesView('#negociacoesView', true);
         // mensagem view
-        this.mensagemView = new MensagemView('#mensagemView');
+        this.mensagemView = new MensagemView('#mensagemView', false);
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
@@ -17,11 +17,8 @@ export class NegociacaoController {
         // envia lista de negociacoes que a view recebe
         this.negociacoesView.update(this.negociacoes);
     }
-    criaNegociacao() {
-        return new Negociacao(new Date(this.inputData.value.replace(/-/g, ',')), Number(this.inputQuantidade.value), Number(this.inputValor.value));
-    }
     adiciona() {
-        const negociacao = this.criaNegociacao();
+        const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (!this.diaUtil(negociacao.data)) {
             this.mensagemView.update('Negociações somente em dias úteis :)');
             return;
