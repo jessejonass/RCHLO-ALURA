@@ -6,15 +6,11 @@ import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        // chama a classe de view e envia para o constructor dela a #id || .class
         this.negociacoesView = new NegociacoesView('#negociacoesView', true);
-        // mensagem view
-        this.mensagemView = new MensagemView('#mensagemView', false);
+        this.mensagemView = new MensagemView('#mensagemView');
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
-        // atualiza a visualização que está em index - #negociacoesView
-        // envia lista de negociacoes que a view recebe
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {

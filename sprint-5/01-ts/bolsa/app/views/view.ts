@@ -4,8 +4,12 @@ export abstract class View<T> {
   private escape = false;
 
   // passar para  view um seletor - #id ou .class
-  constructor(seletor: string, escape: boolean) {
+  constructor(seletor: string, escape?: boolean) {
     this.elemento = document.querySelector(seletor);
+
+    if (escape) {
+      this.escape = escape;
+    }
   }
 
   protected abstract template(template: T): string;

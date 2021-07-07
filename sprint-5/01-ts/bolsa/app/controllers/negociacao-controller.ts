@@ -12,7 +12,7 @@ export class NegociacaoController {
   // chama a classe de view e envia para o constructor dela a #id || .class
   private negociacoesView = new NegociacoesView('#negociacoesView', true);
   // mensagem view
-  private mensagemView = new MensagemView('#mensagemView', false);
+  private mensagemView = new MensagemView('#mensagemView');
 
   constructor() {
     this.inputData = document.querySelector('#data');
